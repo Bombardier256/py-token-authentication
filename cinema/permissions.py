@@ -9,6 +9,5 @@ class IsAdminOrIfAuthenticatedReadOnly(BasePermission):
             and request.user
             and request.user.is_authenticated
         ) or (
-            #request.method in (SAFE_METHODS, "POST") and
             request.user and request.user.is_staff
         )
